@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+}
+body{
+    background-color: darkgreen;
+}
+h1, h2{
+    padding: 10px 0;
+    text-align: center;
+    color: goldenrod;
+}
+p{
+    font-weight: 900;
+    color: bisque;
+}
+.playersNumber{
+    display: flex;
+    margin: 10px 20px;
+    padding: 0 10px;
+}
+.playersInputs p, .playersInputs input{
+    font-size: 24px;
+    padding: 10px;
+}
+.playerInput{
+    display: flex;
+}
