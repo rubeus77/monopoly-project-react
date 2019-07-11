@@ -2,7 +2,7 @@ import React, {Component} from "react";
 //import logo from './logo.svg';
 import GameBoard from './game-board/game-board';
 import GameStart from './game-start/game-start';
-import './App.css';
+//import './App.css';
 
 
 function shuffleArray(array){
@@ -16,8 +16,11 @@ function shuffleArray(array){
 
 class App extends Component {
   state={
-    isStarted: false,
-    playersNames:[]
+    //TODO: odremować i usunąć tymczasowe
+    // isStarted: false,
+    // playersNames:[]
+    isStarted: true,
+    playersNames:["Rafał", "Karolina", "Bożena"]
   }
 
   clickStartHandle=(namesOfPlayers)=>{
@@ -31,7 +34,6 @@ class App extends Component {
   render(){
     return (
       <>
-      {this.state.playersNames.map((elem)=><p key={elem}>{elem}</p>)}
       {this.state.isStarted?<GameBoard numberOfPlayers={this.state.playersNames.length} playersNames={this.state.playersNames}/>:<GameStart clickFunction={this.clickStartHandle}/>}
       </>
     );
