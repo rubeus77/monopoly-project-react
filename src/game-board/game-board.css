@@ -34,3 +34,21 @@ p{
     flex-direction: row;
     justify-content: space-between;
 }
+.playersNames{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.playersNames li{
+    font-size: 24px;
+    padding: 10px 15px;
+    background-color: aqua;
+    margin: 5px;
+}
+li.active{
+    font-weight: bold;
+    background-color: blue;
+    color: white
+}

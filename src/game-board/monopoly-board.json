@@ -8,22 +8,13 @@
     "houses": 35,
     "hotels": 13
   },
-  "house-holets":{
-    "line_price":{
-      "house":[
-        50,
+  "house_hotels":[
+		50,
         100,
         150,
         200
-      ],
-      "hotels":[
-        250,
-        500,
-        750,
-        1000]
-    }
-  },
-  "chance-social":{
+	],
+  "chance_social":{
     "chance":[
       {
         "number":1,
@@ -693,5 +684,48 @@
 		"owner": 99,
 		"specialAction": "false"
 	}
-]
+  ],
+  "district":[
+	  {
+		  "color": "yellow",
+		  "districtNumber":0,
+		  "name":"Dist0"	  
+	  },{
+		  "color": "violet",
+		  "districtNumber":1,
+		  "name":"Dist1"	  
+	  },{
+		  "color": "pink",
+		  "districtNumber":2,
+		  "name":"Dist2"	  
+	  },{
+		  "color":"orange",
+		  "districtNumber":3,
+		  "name":"Dist3"	  
+	  },{
+		  "color":"darkred",
+		  "districtNumber":4,
+		  "name":"Dist4"	  
+	  },{
+		  "color":"green",
+		  "districtNumber":5,
+		  "name":"Dist5"	  
+	  },{
+		  "color":"brown",
+		  "districtNumber":6,
+		  "name":"Dist6"	  
+	  },{
+		  "color": "black",
+		  "districtNumber":7,
+		  "name":"Dist7"	  
+	  },{
+		  "color":"white",
+		  "districtNumber":10,
+		  "name":"Dist10"
+	  },{
+		  "color":"lightgrey",
+		  "districtNumber":11,
+		  "name":"Dist11"
+	  }
+  ]
 }
