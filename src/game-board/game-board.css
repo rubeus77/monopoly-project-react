@@ -42,6 +42,7 @@ p{
     flex-wrap: wrap;
 }
 .playersNames li p{
+    width: 150px;
     color: black;
     font-size: 24px;
     padding: 10px 15px;

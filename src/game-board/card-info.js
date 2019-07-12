@@ -50,14 +50,15 @@ class CardInfo extends Component{
                    
                         <tr>
                             <td>Cena za dom:</td>
-                            <td>XXX</td>
+                            <td>{this.props.housePrices[this.props.cardInfo.lineOnBoard]}</td>
                         </tr>
                         <tr>
                             <td>Cena za hotel:</td>
-                            <td>XXX</td>
+                            <td>{this.props.housePrices[this.props.cardInfo.lineOnBoard]*5}</td>
                         </tr>
                     </table>
-                    {this.props.cardInfo.toSell?<button onClick={()=>this.props.buy()}>Kup</button>:null}
+                    
+                    {this.props.cardInfo.toSell?<button onClick={()=>this.props.buy()}>Kup</button>:(!this.props.cardInfo.isPledge)?<button onClick={()=>this.props.pledge()}>Zasta</button>:<div><button onClick={()=>this.props.unpledge()}>Wykup</button><button onClick={()=>this.props.sell()}>Sprzedaj</button></div>}
                 </div>
             )
         }

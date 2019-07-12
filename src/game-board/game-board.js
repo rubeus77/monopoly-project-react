@@ -41,7 +41,8 @@ class GameBoard extends Component{
         positionToShow:0,
         activePlayer:0,
         playersPosition: [],
-        btnBuyDisable:true
+        btnBuyDisable:true,
+        nextRoll: false
     }
             //TODO: 2. zoptymalizować tworzenie planszy
             //TODO: 4. rozbić logike na małe elementy
@@ -84,34 +85,27 @@ class GameBoard extends Component{
         positionOfPlayerArr[this.state.activePlayer]=positionOfPlayer;
         this.setState({
             playersPosition:positionOfPlayerArr,
-            positionToShow: positionOfPlayer
-        },()=>{ //FIXME: cały callback do usunięcia w finalnym projekcie
-            console.log("Pozycja gracza "+positionOfPlayer);
-            console.log("Suma oczek: "+diceSum);
-            console.log("Pozycja ze setState "+this.state.playersPosition);
-            console.log(this.state.players);
-            console.log("positionToShow "+this.state.positionToShow);
+            positionToShow: positionOfPlayer,
+            nextRoll: true
         })       
     }
     buyCard=()=>{
+        //zmienne tymczasowe
         let fieldsTemp=this.state.fields;
         let playerTemp=this.state.players;
         let bankTemp=this.state.bank;
         //przypisanie do karty nowego właściciela oraz zmiana statusu toSell na 'false'
         fieldsTemp[this.state.positionToShow].owner=this.state.activePlayer;
         fieldsTemp[this.state.positionToShow].toSell=false;
-
-        let cardPrice=fieldsTemp[this.state.positionToShow].price;
-
-        playerTemp[this.state.activePlayer]-=cardPrice;
-        bankTemp.money+=cardPrice;
-
+        //zmniejszenie stanu gracza i zwiększenie stanu banku
+        playerTemp[this.state.activePlayer]-=fieldsTemp[this.state.positionToShow].price;
+        bankTemp.money+=fieldsTemp[this.state.positionToShow].price;
+        //przypisanie do state
         this.setState({
             fields: fieldsTemp,
             bank: bankTemp,
             player: playerTemp
         })
-        
     }
     endOfMove=()=>{
         let accPlayer=this.state.activePlayer;
@@ -119,8 +113,18 @@ class GameBoard extends Component{
         accPlayer=(accPlayer>=this.state.numberOfPlayers)?0:accPlayer
         this.setState({
             activePlayer: accPlayer,
-            positionToShow:0
+            positionToShow:0,
+            nextRoll: false
         })
+    }
+    toPledge=()=>{
+
+    }
+    sellCard=()=>{
+
+    }
+    unPledge=()=>{
+
     }
     render(){
         return(
@@ -162,15 +166,14 @@ class GameBoard extends Component{
                                     <li key={ind} className={(this.state.activePlayer===ind)?"active":""}>
                                         <p>{elem}</p>
                                         <p>${this.state.players[ind]}</p>
-                                        
                                     </li>
                                 ))}
                             </ul>
-                            <button onClick={this.diceRoll}>Rzut</button>
+                            <button onClick={this.diceRoll} disabled={this.state.nextRoll}>Rzut</button>
                             
                             <button>Kup budynki</button>
-                            <button onClick={this.endOfMove}>Koniec rundy</button>
-                            <CardInfo cardInfo={this.state.fields[this.state.positionToShow]} buy={this.buyCard} player={this.state.activePlayer}/>
+                            <button onClick={this.endOfMove} disabled={!this.state.nextRoll}>Koniec rundy</button>
+                            <CardInfo housePrices={this.state.housePrice} cardInfo={this.state.fields[this.state.positionToShow]} buy={this.buyCard} pledge={this.toPledge} sell={this.sellCard} player={this.state.activePlayer} unpledge={this.unPledge}/>
                         </div>
                         <div>
                             <div className="column"></div>
@@ -184,8 +187,6 @@ class GameBoard extends Component{
                             <div className="column"></div>
                             <div className="column"></div>
                         </div>
-                        
-                        
                     </div>
                     <div className="bottom">
                         <div className="corner"></div>
