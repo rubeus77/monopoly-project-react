@@ -1,8 +1,12 @@
 {
-  "game_parm": {
-    "numberOfPlayers": 0,
-    "playersNames": []
-  },
+  "players": [
+	   1500,
+	   1500,
+	   1500,
+	   1500,
+	   1500,
+	   1500
+	],
   "bank": {
     "money": 20580,
     "houses": 35,
@@ -44,14 +48,14 @@
 		"name": "Start",
 		"cardNumber": 0,
 		"lineOnBoard": 0,
-		"price": -200,
+		"price": 0,
 		"houses":[],
 		"districtNumber": "",
-		"toSell": "false",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": false,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "true"
+		"specialAction": true
 	},
 	{
 		"name": "Konopacka",
@@ -65,11 +69,11 @@
 		160,
 		250],
 		"districtNumber": 0,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	},
 	{
 		"name": "Social",
@@ -78,11 +82,11 @@
 		"price": "",
 		"houses":[],
 		"districtNumber": "",
-		"toSell": "false",
+		"toSell": false,
 		"isPledge": "flase",
-		"isFullDistrict": "false",
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "true"
+		"specialAction": true
 	},
 	{
 		"name": "Stalowa",
@@ -96,11 +100,11 @@
 		320,
 		450],
 		"districtNumber": 0,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	},{
 		"name": "Tax",
 		"cardNumber": 4,
@@ -108,11 +112,11 @@
 		"price": 200,
 		"houses":[],
 		"districtNumber": "",
-		"toSell": "false",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": false,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "true"
+		"specialAction": true
 	},
 	{
 		"name": "Train",
@@ -125,11 +129,11 @@
 		200],
 		
 		"districtNumber": 10,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	},
 	{
 		"name": "Radzymińska",
@@ -143,11 +147,11 @@
 		400,
 		550],
 		"districtNumber": 1,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	},
 	{
 		"name": "Chance",
@@ -156,11 +160,11 @@
 		"price": "",
 		"houses": [],
 		"districtNumber": "",
-		"toSell": "false",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": false,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "true"
+		"specialAction": true
 	},
 	{
 		"name": "Jagiellońska",
@@ -174,11 +178,11 @@
 		400,
 		550],
 		"districtNumber": 1,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	},
 	{
 		"name": "Targowa",
@@ -192,11 +196,11 @@
 		450,
 		600],
 		"districtNumber": 1,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	},
 	{
 		"name": "Prison",
@@ -205,11 +209,11 @@
 		"price": "",
 		"houses":[],
 		"districtNumber": "",
-		"toSell": "false",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": false,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "true"
+		"specialAction": true
 	},
 	{
 		"name": "Płowiecka",
@@ -223,11 +227,11 @@
 		625,
 		750],
 		"districtNumber": 2,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	},
 	{
 		"name": "Electricity",
@@ -237,11 +241,11 @@
 		"houses": [4,
 		10],
 		"districtNumber": 11,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	},
 	{
 		"name": "Marsa",
@@ -255,11 +259,11 @@
 		625,
 		750],
 		"districtNumber": 2,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	},
 	{
 		"name": "Grochowska",
@@ -273,11 +277,11 @@
 		700,
 		900],
 		"districtNumber": 2,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	},
 	{
 		"name": "Train",
@@ -289,11 +293,11 @@
 		100,
 		200],
 		"districtNumber": 10,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	},
 	{
 		"name": "Obozowa",
@@ -307,11 +311,11 @@
 		750,
 		950],
 		"districtNumber": 3,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	},
 	{
 		"name": "Social",
@@ -320,11 +324,11 @@
 		"price": "",
 		"houses": [],
 		"districtNumber": "",
-		"toSell": "false",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": false,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "true"
+		"specialAction": true
 	},
 	{
 		"name": "Górczewska",
@@ -338,11 +342,11 @@
 		750,
 		950],
 		"districtNumber": 3,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	},
 	{
 		"name": "Wolska",
@@ -356,11 +360,11 @@
 		800,
 		1000],
 		"districtNumber": 3,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	},
 	{
 		"name": "Parking",
@@ -369,11 +373,11 @@
 		"price": "",
 		"houses": [],
 		"districtNumber": "",
-		"toSell": "false",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": false,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "true"
+		"specialAction": true
 	},
 	{
 		"name": "Mickiewicza",
@@ -387,11 +391,11 @@
 		875,
 		1050],
 		"districtNumber": 4,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	},
 	{
 		"name": "Chance",
@@ -400,11 +404,11 @@
 		"price": "",
 		"houses": [],
 		"districtNumber": "",
-		"toSell": "false",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": false,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "true"
+		"specialAction": true
 	},
 	{
 		"name": "Słowackiego",
@@ -418,11 +422,11 @@
 		875,
 		1050],
 		"districtNumber": 4,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	},
 	{
 		"name": "Wilsona",
@@ -436,11 +440,11 @@
 		925,
 		1100],
 		"districtNumber": 4,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	},
 	{
 		"name": "Train",
@@ -452,11 +456,11 @@
 		100,
 		200],
 		"districtNumber": 10,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	},
 	{
 		"name": "Świętokrzyska",
@@ -470,11 +474,11 @@
 		975,
 		1150],
 		"districtNumber": 5,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	},
 	{
 		"name": "Krakowskie Przedmieście",
@@ -488,11 +492,11 @@
 		975,
 		1150],
 		"districtNumber": 5,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	},
 	{
 		"name": "Aqua",
@@ -502,11 +506,11 @@
 		"houses": [4,
 		10],
 		"districtNumber": 11,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	},
 	{
 		"name": "Nowy świat",
@@ -520,11 +524,11 @@
 		1025,
 		1200],
 		"districtNumber": 5,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	},
 	{
 		"name": "GoToPrison",
@@ -533,11 +537,11 @@
 		"price": "",
 		"houses": [],
 		"districtNumber": "",
-		"toSell": "false",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": false,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "true"
+		"specialAction": true
 	},
 	{
 		"name": "Plac Trzech Krzyży",
@@ -551,11 +555,11 @@
 		1100,
 		1275],
 		"districtNumber": 6,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	},
 	{
 		"name": "Marszałkowska",
@@ -569,11 +573,11 @@
 		1100,
 		1275],
 		"districtNumber": 6,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	},
 	{
 		"name": "Social",
@@ -582,11 +586,11 @@
 		"price": "",
 		"houses": [],
 		"districtNumber": "",
-		"toSell": "false",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": false,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "true"
+		"specialAction": true
 	},
 	{
 		"name": "Aleje Jerozolimskie",
@@ -600,11 +604,11 @@
 		1200,
 		1400],
 		"districtNumber": 6,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	},
 	{
 		"name": "Train",
@@ -616,11 +620,11 @@
 		100,
 		200],
 		"districtNumber": 10,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	},
 	{
 		"name": "Chance",
@@ -629,11 +633,11 @@
 		"price": "",
 		"houses":[],
 		"districtNumber": "",
-		"toSell": "false",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": false,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "true"
+		"specialAction": true
 	},
 	{
 		"name": "Belwederska",
@@ -647,11 +651,11 @@
 		1300,
 		1500],
 		"districtNumber": 7,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	},
 	{
 		"name": "Tax",
@@ -660,11 +664,11 @@
 		"price": 100,
 		"houses":[],
 		"districtNumber": "",
-		"toSell": "false",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": false,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "true"
+		"specialAction": true
 	},
 	{
 		"name": "Aleje Ujazdowskie",
@@ -678,11 +682,11 @@
 		1700,
 		2000],
 		"districtNumber": 7,
-		"toSell": "true",
-		"isPledge": "false",
-		"isFullDistrict": "false",
+		"toSell": true,
+		"isPledge": false,
+		"isFullDistrict": false,
 		"owner": 99,
-		"specialAction": "false"
+		"specialAction": false
 	}
   ],
   "district":[

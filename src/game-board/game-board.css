@@ -41,13 +41,14 @@ p{
     justify-content: flex-start;
     flex-wrap: wrap;
 }
-.playersNames li{
+.playersNames li p{
+    color: black;
     font-size: 24px;
     padding: 10px 15px;
     background-color: aqua;
     margin: 5px;
 }
-li.active{
+li.active p{
     font-weight: bold;
     background-color: blue;
     color: white

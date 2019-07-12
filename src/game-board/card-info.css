@@ -1,0 +1,17 @@
+.cardInfo h3{
+    font-size: 24px;
+    font-weight: bold;
+}
+.cardInfo h4{
+    font-size: 20px;
+}
+
+.cardInfo td{
+    font-size: 14px;
+}
+.cardInfo td:first-child{
+    text-align: left;
+}
+.cardInfo td:last-child{
+    text-align: right;
+}

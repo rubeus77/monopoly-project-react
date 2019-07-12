@@ -1,10 +1,35 @@
 import React, {Component} from "react";
 import './game-board.css';
 import game_param from "./monopoly-board.json";
+import CardInfo from "./card-info";
 
-  
+function rollDiceFn(){
+    let repeat1=Math.floor(Math.random()*90+10);
+    let repeat2=Math.floor(Math.random()*90+10);
+    let repeat=0;
+    let diceSum=0;
+    repeat=(repeat1>repeat2)?repeat1:repeat2;
+    let counter=0;
+    let dice1=0;
+    let dice2=0;
+    
+    do{
+        if(counter<repeat1){dice1=Math.floor(Math.random()*6+1)};
+        if(counter<repeat2){dice2=Math.floor(Math.random()*6+1)};
+        counter++;
+    }while(counter<repeat);
+    diceSum=dice1+dice2;
+    //TODO: dokończyć obsługe dubletu
+    // if(dice1===dice2){
+    //     diceSum+=100;
+    //     rollDiceFn()
+    // }
+    
+    return diceSum;
+}
 class GameBoard extends Component{
     state={
+        players: game_param.players,
         bank: game_param.bank,
         fields: game_param.fields,
         districts: game_param.district,
@@ -13,10 +38,10 @@ class GameBoard extends Component{
         social:game_param.chance_social.social,
         numberOfPlayers:this.props.numberOfPlayers,
         playersNames:this.props.playersNames,
-        dice:0,
+        positionToShow:0,
         activePlayer:0,
         playersPosition: [],
-        btnBuy:false
+        btnBuyDisable:true
     }
             //TODO: 2. zoptymalizować tworzenie planszy
             //TODO: 4. rozbić logike na małe elementy
@@ -31,7 +56,7 @@ class GameBoard extends Component{
             playersPosition:arrPosition
         })
 
-    //TODO: zrobic kiedyś na serverze JSON
+    //TODO: zrobic kiedyś na serverze JSON będzie to lepsze ponieważ kontakt będzie z każdego komponentu niezależnie
     //     fetch("http://localhost:3005/fields")
     //     .then(resp=>resp.json())
     //     .then(data=>(
@@ -41,38 +66,51 @@ class GameBoard extends Component{
     //     ))
     //     .catch(err=>alert(err))
     }
+    
     diceRoll=()=>{
-        let repeat1=Math.floor(Math.random()*90+10);
-        let repeat2=Math.floor(Math.random()*90+10);
-        let repeat=0;
-        let diceSum=0;
-        repeat=(repeat1>repeat2)?repeat1:repeat2;
-        let counter=0;
-        let dice1=0;
-        let dice2=0;
-        do{
-            if(counter<repeat1){dice1=Math.floor(Math.random()*6+1)};
-            if(counter<repeat2){dice2=Math.floor(Math.random()*6+1)};
-            counter++;
-        }while(counter<repeat);
-        diceSum=dice1+dice2;
+        let diceSum= rollDiceFn();
+        let positionOfPlayer=0;
+        let positionOfPlayerArr=[];
+        positionOfPlayerArr=this.state.playersPosition;
+        positionOfPlayer=this.state.playersPosition[this.state.activePlayer]+diceSum;
+        if(positionOfPlayer>39){
+            positionOfPlayer=positionOfPlayer-40;
+            let playersArr=this.state.players;
+            playersArr[this.state.activePlayer]=this.state.players[this.state.activePlayer]+200;
+            this.setState({
+                players: playersArr
+            })
+        }
+        positionOfPlayerArr[this.state.activePlayer]=positionOfPlayer;
         this.setState({
-            dice: diceSum
-        },()=>{
-            let positionOfPlayer=0;
-            positionOfPlayer=this.state.playersPosition[this.state.activePlayer]+this.state.dice;
-            if((this.state.fields[positionOfPlayer].owner===99) && (this.state.fields[positionOfPlayer].toSell)){
-                this.setState({
-                    btnBuy:true
-                })
-            }else{
-                this.setState({
-                    btnBuy: false
-                })
-            }
-            console.log("Warunek"+((this.state.fields[positionOfPlayer].owner===99) && (this.state.fields[positionOfPlayer].toSell)))
-            console.log("btnBuy"+this.state.btnBuy)
-        });
+            playersPosition:positionOfPlayerArr,
+            positionToShow: positionOfPlayer
+        },()=>{ //FIXME: cały callback do usunięcia w finalnym projekcie
+            console.log("Pozycja gracza "+positionOfPlayer);
+            console.log("Suma oczek: "+diceSum);
+            console.log("Pozycja ze setState "+this.state.playersPosition);
+            console.log(this.state.players);
+            console.log("positionToShow "+this.state.positionToShow);
+        })       
+    }
+    buyCard=()=>{
+        let fieldsTemp=this.state.fields;
+        let playerTemp=this.state.players;
+        let bankTemp=this.state.bank;
+        //przypisanie do karty nowego właściciela oraz zmiana statusu toSell na 'false'
+        fieldsTemp[this.state.positionToShow].owner=this.state.activePlayer;
+        fieldsTemp[this.state.positionToShow].toSell=false;
+
+        let cardPrice=fieldsTemp[this.state.positionToShow].price;
+
+        playerTemp[this.state.activePlayer]-=cardPrice;
+        bankTemp.money+=cardPrice;
+
+        this.setState({
+            fields: fieldsTemp,
+            bank: bankTemp,
+            player: playerTemp
+        })
         
     }
     endOfMove=()=>{
@@ -80,7 +118,8 @@ class GameBoard extends Component{
         accPlayer++;
         accPlayer=(accPlayer>=this.state.numberOfPlayers)?0:accPlayer
         this.setState({
-            activePlayer: accPlayer
+            activePlayer: accPlayer,
+            positionToShow:0
         })
     }
     render(){
@@ -121,14 +160,17 @@ class GameBoard extends Component{
                             <ul className="playersNames">
                                 {this.state.playersNames.map((elem,ind)=>(
                                     <li key={ind} className={(this.state.activePlayer===ind)?"active":""}>
-                                        {elem}
+                                        <p>{elem}</p>
+                                        <p>${this.state.players[ind]}</p>
+                                        
                                     </li>
                                 ))}
                             </ul>
                             <button onClick={this.diceRoll}>Rzut</button>
-                            <button>Kup posiadłość</button>
+                            
                             <button>Kup budynki</button>
                             <button onClick={this.endOfMove}>Koniec rundy</button>
+                            <CardInfo cardInfo={this.state.fields[this.state.positionToShow]} buy={this.buyCard} player={this.state.activePlayer}/>
                         </div>
                         <div>
                             <div className="column"></div>
