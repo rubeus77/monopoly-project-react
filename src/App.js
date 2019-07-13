@@ -20,7 +20,7 @@ class App extends Component {
     // isStarted: false,
     // playersNames:[]
     isStarted: true,
-    playersNames:["Rafał", "Karolina", "Bożena"]
+    playersNames:["Rafał", "Karolina"]
   }
 
   clickStartHandle=(namesOfPlayers)=>{
