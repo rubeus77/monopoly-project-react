@@ -14,8 +14,19 @@ class CardInfo extends Component{
         //TODO: dorobić logikę wyświetlania przycisków 
         let ownerTemp; 
         ownerTemp= !(this.props.cardInfo.owner===99)?this.props.playersNames[this.props.cardInfo.owner]:"BANK";
-        let btnsPledgeUnpledge= !this.props.cardInfo.isPledge?<button onClick={()=>this.props.pledge()}>Zastaw</button>:<button onClick={()=>this.props.unpledge()}>Wykup</button>
-        let btnsBuySell=this.props.cardInfo.toSell?<button onClick={()=>this.props.buy()}>Kup</button>:<button onClick={()=>this.props.sell()}>Sprzedaj</button>
+        // if(){}
+        // let btnsPledgeUnpledge= !this.props.cardInfo.isPledge?<button onClick={()=>this.props.pledge()}>Zastaw</button>:<button onClick={()=>this.props.unpledge()}>Wykup</button>
+        // let btnsBuySell=this.props.cardInfo.toSell?<button onClick={()=>this.props.buy()}>Kup</button>:<button onClick={()=>this.props.sell()}>Sprzedaj</button>
+        let btnsForCard=null;
+        let btnsForCard1=null;
+        if(this.props.cardInfo.owner===99 && this.props.cardInfo.toSell){
+            btnsForCard=<button onClick={()=>this.props.buy()}>Kup</button>
+        }else if(this.props.cardInfo.owner!==99 && this.props.cardInfo.owner===this.props.player){
+            btnsForCard=<button onClick={()=>this.props.sell()}>Sprzedaj</button>
+            btnsForCard1=!this.props.cardInfo.isPledge?<button onClick={()=>this.props.pledge()}>Zastaw</button>:<button onClick={()=>this.props.unpledge()}>Wykup</button>
+        }else{
+            btnsForCard=null
+        }
         if(this.props.cardInfo.specialAction){
             return(
                 <div>
@@ -75,10 +86,13 @@ class CardInfo extends Component{
                         </tr>
                         </tbody>
                     </table>
-                    {(this.props.cardInfo.owner===99 || !this.state.isOwner)?btnsBuySell:null}
+                    {/* blok przycisków */}
+                    {/* {(this.props.cardInfo.owner===99 || !this.state.isOwner)?btnsBuySell:null} */}
                     {/* {this.props.cardInfo.toSell?<button onClick={()=>this.props.buy()}>Kup</button>:<button onClick={()=>this.props.sell()}>Sprzedaj</button>} */}
                     {/* {!this.props.cardInfo.isPledge?<button onClick={()=>this.props.pledge()}>Zastaw</button>:<button onClick={()=>this.props.unpledge()}>Wykup</button>} */}
-                    {this.state.isOwner?btnsPledgeUnpledge:null}
+                    {/* {this.state.isOwner?btnsPledgeUnpledge:null} */}
+                    {btnsForCard}{btnsForCard1}
+
                 </div>
             )
         }

@@ -226,7 +226,7 @@ class GameBoard extends Component{
         console.log("bank money: "+this.state.bank.money)
         console.log("pozycje graczy "+this.state.playersPosition)
         console.log("kasa graczy: "+this.state.players)
-        console.log("Posiadłości: "+this.state.playersProperties)
+        // console.log("Posiadłości: "+this.state.playersProperties)
         return(
             <React.Fragment>
                 <h1>Board</h1>

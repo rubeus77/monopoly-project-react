@@ -17,10 +17,10 @@ function shuffleArray(array){
 class App extends Component {
   state={
     //TODO: odremować i usunąć tymczasowe
-    // isStarted: false,
-    // playersNames:[]
-    isStarted: true,
-    playersNames:["Rafał", "Karolina"]
+    isStarted: false,
+    playersNames:[]
+    // isStarted: true,
+    // playersNames:["Rafał", "Karolina"]
   }
 
   clickStartHandle=(namesOfPlayers)=>{

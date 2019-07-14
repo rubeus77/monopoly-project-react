@@ -1,6 +1,6 @@
 # MONOPOLY GAME 
+Projekt implementuje grę MONOPOLY. 
 
-Opis w kilku zdaniach, co to za projekt
 
 # Play: 
 Jeśli jest to gra to opisać zasaday itd
